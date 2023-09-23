@@ -13,7 +13,14 @@
 <body>
 
     <script>
-
+        function searchBtnClicked(){
+            // alert(document.getElementById('input1').value);
+            if(document.getElementById('input1').value == ""){
+                alert("未输入关键词");
+                return;
+            }
+            window.location.href="https://www.bing.com/images/search?q="+document.getElementById('input1').value;
+        }
     </script>
 
     <div class="container my-4">
@@ -24,8 +31,8 @@
             </div>
             <div class="col-md-8">
                 <div class="input-group">
-                    <input type="text" class="form-control" name="search" placeholder="请输入关键字">
-                    <button class="btn btn-outline-secondary" type="button">搜索</button>
+                    <input id="input1" type="text" class="form-control" name="search" placeholder="请输入关键字">
+                    <button class="btn btn-outline-secondary" type="button" onclick="searchBtnClicked()">搜索</button>
                 </div>
             </div>
         </div>
