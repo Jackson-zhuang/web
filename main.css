@@ -1,0 +1,97 @@
+.top-section {
+    background-color: rgb(193, 197, 197);
+    padding: 1rem 0; /* Top and bottom padding */
+}
+
+.container {
+    max-width: 1200px; /* Adjust if you have a specific width in mind */
+    margin: 0 auto; /* Centers the container */
+}
+
+.link {
+    color: #121111;
+    text-decoration: none; /* Removes underline from links */
+    transition: color 0.3s; /* Smooth color transition for hover effect */
+}
+
+.link:hover {
+    color: #555; /* Darker shade for hover */
+}
+
+.info-text {
+    color: #121111;
+}
+
+/* Carousel Styles */
+.carousel-inner .carousel-item {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    padding-top: 75%; /* 默认的宽高比为4:3 */
+}
+
+.carousel-inner img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* 在中等屏幕上使用16:9的宽高比 */
+@media (min-width: 768px) {
+    .carousel-inner .carousel-item {
+        padding-top: 56.25%; /* 对于16:9的宽高比 */
+    }
+}
+
+/* 在大屏幕上使用21:9的宽高比 */
+@media (min-width: 992px) {
+    .carousel-inner .carousel-item {
+        padding-top: 42.85%; /* 对于21:9的宽高比 */
+    }
+}
+
+.video-wrapper {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    padding-top: 56.25%; /* 16:9 宽高比; 如果你的视频有不同的宽高比，你需要调整这个值 */
+}
+
+.video-wrapper video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+.footer {
+    position: fixed;  /* 固定位置 */
+    bottom: 0;        /* 位于屏幕底部 */
+    left: 0;          /* 从屏幕左侧开始 */
+    width: 100%;      /* 宽度为屏幕宽度 */
+    background-color: rgba(0, 0, 0, 0.8);  /* 半透明的黑色背景，增加透明度让背景看起来更加柔和 */
+    color: #FFFFFF;   /* 白色文字 */
+    padding: 10px 0;  /* 上下有10px的填充，左右无填充 */
+    text-align: center; /* 文字居中 */
+}
+
+.footer p {
+    margin: 0;         /* 移除段落的默认边距 */
+    padding: 0;        /* 移除段落的默认填充 */
+}
+
+.footer a {
+    margin: 0 15px;    /* 每个链接之间有30px的间距，所以每个链接左右都有15px的边距 */
+    color: #FFFFFF;    /* 白色链接 */
+    text-decoration: none; /* 移除链接下划线 */
+    border-right: 1px solid #FFFFFF; /* 链接之间的白色竖线 */
+    padding-right: 15px; /* 为了不让竖线与文字紧密贴合，给链接增加右填充 */
+}
+
+.footer a:last-child {
+    border: none;       /* 最后一个链接不应有竖线 */
+}
+

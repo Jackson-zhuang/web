@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>主页</title>
+    <link rel="stylesheet" href="main.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+
+<header>
+    <div class="top-section">
+        <div class="container">
+            <div class="row">
+    
+                <div class="col-md-2">
+                    <a href="http://www.gov.cn/" class="link" target="_blank">中国政府网</a>
+                </div>
+                <div class="col-md-2">
+                    <a href="http://www.shanxi.gov.cn/" class="link" target="_blank">山西省人民政府网</a>
+                </div>
+                <div class="col-md-2 info-text">
+                    本网站支持IPv6
+                </div>
+    
+                <!-- Spacer -->
+                <div class="col-md-2 spacer"></div>
+    
+                <!-- Right-aligned links -->
+                <div class="col-md-2 text-end">
+                    <a href="http://www.quwo.gov.cn/xzf/" class="link">曲沃县政府官网</a>
+                </div>
+                <div class="col-md-2 text-end">
+                    <a href="http://www.weather.com.cn/weather1d/101100702.shtml#input" class="link">曲沃天气</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    </div>
+    <div class="px-3 py-2 bg-dark text-white">
+      <div class="container">
+        <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+          <a href="/" class="d-flex align-items-center my-2 my-lg-0 me-lg-auto text-white text-decoration-none">
+            <svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap"><use xlink:href="#bootstrap"/></svg>
+          </a>
+
+          <ul class="nav col-12 col-lg-auto my-2 justify-content-center my-md-0 text-small">
+            <li>
+              <a href="#" class="nav-link text-secondary">
+                <svg class="bi d-block mx-auto mb-1" width="24" height="24"><use xlink:href="#home"/></svg>
+                主页
+              </a>
+            </li>
+            <li>
+              <a href="#" class="nav-link text-white">
+                <svg class="bi d-block mx-auto mb-1" width="24" height="24"><use xlink:href="#speedometer2"/></svg>
+                城市美景
+              </a>
+            </li>
+            <li>
+              <a href="food.html" class="nav-link text-white" target="_blank">
+                <svg class="bi d-block mx-auto mb-1" width="24" height="24"><use xlink:href="#table"/></svg>
+                城市美食
+              </a>
+            </li>
+            <li class="nav-item dropdown">
+              <a href="#" class="nav-link dropdown-toggle"id="navbardrop" data-bs-toggle="dropdown" style="color: #f8f2f2;" >
+                <svg class="bi d-block mx-auto mb-1" width="24" height="24"><use xlink:href="#grid"/></svg>
+                旅游指南
+              </a>
+              <div class="dropdown-menu">
+                <a class="dropdown-item" href="#">晋国博物馆</a>
+                <a class="dropdown-item" href="#">春秋晋国城</a>
+                <a class="dropdown-item" href="#">桥山黄帝文化风景区</a>
+                <a class="dropdown-item" href="#">朝阳沟景区</a>
+                <a class="dropdown-item" href="#">磨盘岭休闲农业观光区</a>
+              </div>
+            </li>
+            <li>
+                <a href="#" class="nav-link text-white">
+                  <svg class="bi d-block mx-auto mb-1" width="24" height="24"><use xlink:href="#speedometer2"/></svg>
+                  成语之乡
+                </a>
+              </li>
+            <li>
+              <a href="#" class="nav-link text-white">
+                <svg class="bi d-block mx-auto mb-1" width="24" height="24"><use xlink:href="#people-circle"/></svg>
+                其他
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </header>
+<body>
+
+    <script>
+        function searchBtnClicked() {
+            var inputValue = document.getElementById('input_search').value;
+
+            if (inputValue == "") {
+                alert("未输入关键词");
+                return;
+            }
+
+            var searchURL = "https://www.bing.com/images/search?q=" + inputValue;
+            window.open(searchURL, '_blank');
+        }
+
+        // 确保在完整的DOM内容加载后才执行我们的脚本
+        document.addEventListener("DOMContentLoaded", function () {
+            // Add an event listener to the input field
+            document.getElementById('input1').addEventListener('keydown', function (event) {
+                if (event.keyCode == 13 || event.which == 13) {
+                    event.preventDefault(); // Prevent the form from submitting
+                    searchBtnClicked();
+                }
+            });
+        });
+    </script>
+
+    <div class="container my-4">
+        <!-- Logo & Search Section -->
+        <div class="row align-items-center mb-4">
+            <div class="col-md-4">
+                <img src="picture/main/icon.jpg" class="img-fluid" alt="主页图标">
+            </div>
+            <div class="col-md-8">
+                <div class="input-group">
+                    <input id="input_search" type="text" class="form-control" name="search" placeholder="请输入关键字">
+                    <button class="btn btn-outline-secondary" type="button" onclick="searchBtnClicked()">搜索</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Carousel Section -->
+    <div class="row mb-4 justify-content-center">
+        <div class="col-12 col-md-8">
+            <div id="carouselExampleIndicators" class="carousel slide">
+                <h2>城市风貌</h2>
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0"
+                        class="active" aria-current="true" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+                        aria-label="Slide 2"></button>
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+                        aria-label="Slide 3"></button>
+                </div>
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="picture/main/jinyuan1.jpg" class="d-block w-100" alt="晋园">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="picture/main/jiangyuan1.jpg" class="d-block w-100" alt="绛园">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="picture/main/sipailou1.jpg" class="d-block w-100" alt="四牌楼">
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+                    data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+                    data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="container mt-4">
+        <h2>城市简介</h2>
+        <div id="accordion">
+            <div class="card">
+                <div class="card-header">
+                    <a class="btn" data-bs-toggle="collapse" href="#collapseOne">
+                     <img src="picture/main/mark.png" class="me-2" width="20px" height="20px" alt="标记">
+                    <strong>姓名起源</strong>
+                    </a>
+                </div>
+                <div id="collapseOne" class="collapse show" data-bs-parent="#accordion">
+                    <div class="card-body">
+                        曲沃之名，始于西周初期。古晋国以绛山为宗，绛水（今沸泉）出绛山之南，沸涌而东，折向北经青玉峡，东流白石山，悬而为沃泉（今景明瀑布），九曲而
+                    </p>北入于浍，萦回盘旋，西流入汾。取其曲，取其沃，得名曲沃。据《读修曲沃县志》，因古曲沃城为名，古曲沃得名于境有沃水并萦回盘旋，是为曲沃命名之由。
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header">
+                    <a class="collapsed btn" data-bs-toggle="collapse" href="#collapseTwo">
+                        <img src="picture/main/mark.png" class="me-2" width="20px" height="20px" alt="标记">
+                    <strong>地理位置</strong>
+                </a>
+                </div>
+                 <div id="collapseTwo" class="collapse" data-bs-parent="#accordion">
+                    <div class="card-body">
+                        曲沃县地处晋、陕、豫黄河金三角枢纽区域，背靠京津唐、面向环渤海，呈望北向南、承东启西之势，古时便是工商发达、商贸流通之地。
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header">
+                    <a class="collapsed btn" data-bs-toggle="collapse" href="#collapseThree">
+                    <img src="picture/main/mark.png" class="me-2" width="20px" height="20px" alt="标记">
+                    <strong>城市成就</strong>
+                    </a>
+                </div>
+                <div id="collapseThree" class="collapse" data-bs-parent="#accordion">
+                    <div class="card-body">
+                        中国地名文化遗产“千年古县”、中国成语典故之乡、中国成语典故传承基地、中国文化百强县、全国休闲农业和乡村旅游示范县、中国华侨国际文化交流基地
+                    </p>、全国休闲农业和乡村旅游示范县、国家农产品质量安全县、全国农村一二三产业融合发展先导区、全国农村创业创新典型县范例、全国商品粮基地县、全国蔬菜</p>
+                    重点县、全国农技推广示范县、全国小麦高产创建示范县、全国小麦科技入户示范县、全国基层中医药工作先进县、全国特教</p>先进县、全国社会治安综合治理先进县等30余张国字号名片。</p>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header">
+                    <a class="collapsed btn" data-bs-toggle="collapse" href="#collapseFour">
+                    <img src="picture/main/mark.png" class="me-2" width="20px" height="20px" alt="标记">
+                    <strong>人口状况</strong>
+                    </a>
+                </div>
+                <div id="collapseFour" class="collapse" data-bs-parent="#accordion">
+                    <div class="card-body">
+                        <strong>人口 </strong></p>                      
+                        截止2021年底，曲沃县常住总人口为216595人，其中男性110366人，女性106299人，市镇常住人口106526人，乡村常住人口141494人。</p>
+                        <strong>民族</strong></p>     
+                        曲沃县共有回、满、蒙、壮、傣、藏、黎、侗8个少数民族，共1480余人。其中，以回族为主，主要集中在县城东关、西南街和北关。
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+ 
+
+    <!-- Video Section -->
+    <div class="row mb-4 justify-content-center">
+        <div class="col-12 col-md-8">
+            <h2>城市宣传片</h2>
+            <div class="video-wrapper">
+                <video controls>
+                    <source src="picture/main/promotionalvideo.mp4" type="video/mp4">
+                    您的浏览器不支持视频标签。
+                </video>
+            </div>
+        </div>
+    </div>
+     
+    </div>
+    <div class="footer">
+        <p>
+            <a href="javascript::">关于我们</a>
+            <a href="javascript::">联系我们</a>
+            <a href="javascript::">反馈</a>
+            <a href="javascript::" style="border: none">更多</a>
+        </p>
+    </div>
+    <div style="background: #0053a6; text-align: center; padding: 10px; color: aliceblue;">
+        Copyright © ZZY 2023
+    </div>
+</body>
+
+</html>
