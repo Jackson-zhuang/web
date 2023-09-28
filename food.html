@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<!-- <title>主页</title> -->
+
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+	<!-- <link rel="import" href="food.html" id="page1"> -->
+
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+	<script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.7.1/jquery.js"></script>
+	<!-- 
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge"> -->
+	<title>曲沃美食</title>
+	<link rel="stylesheet" type="text/css" href="food.css" />
+	<link rel="stylesheet" href="main.css">
+</head>
+
+<body>
+
+
+	<div style="background-image: url(./picture/banner-zzbbg.png);">
+		<!-- <div class="bg-primary px-3 py-2">
+				<div class="d-flex justify-content-start">
+
+					<div class="col-md-2">
+						<a href="http://www.gov.cn/" class="link" target="_blank">中国政府网</a>
+					</div>
+					<div class="col-md-2">
+						<a href="http://www.shanxi.gov.cn/" class="link" target="_blank">山西省人民政府网</a>
+					</div>
+					
+					<div class="col-md-2 text-end">
+						<a href="http://www.quwo.gov.cn/xzf/" class="link">曲沃县政府官网</a>
+					</div>
+					<div class="col-md-2 text-end">
+						<a href="http://www.weather.com.cn/weather1d/101100702.shtml#input" class="link">曲沃天气</a>
+					</div>
+				</div>
+			</div> -->
+
+
+		<div class="container my-4">
+			<!-- Logo & Search Section -->
+			<div class="d-flex justify-content-around align-items-center">
+				<div class="">
+					<img src="picture/main/icon.png" class="" style="width: 20vw;" alt="主页图标">
+				</div>
+				<div class="">
+					<div class="input-group">
+						<input id="input_search" type="text" class="form-control" name="search" placeholder="请输入关键字">
+						<button class="btn btn-outline-secondary" type="button" onclick="searchBtnClicked()">搜索</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script>
+			function searchBtnClicked() {
+				var inputValue = document.getElementById('input_search').value;
+
+				if (inputValue == "") {
+					alert("未输入关键词");
+					return;
+				}
+
+				var searchURL = "https://www.bing.com/images/search?q=" + inputValue;
+				window.open(searchURL, '_blank');
+			}
+
+			// 确保在完整的DOM内容加载后才执行我们的脚本
+			document.addEventListener("DOMContentLoaded", function () {
+				// Add an event listener to the input field
+				document.getElementById('input_search').addEventListener('keydown', function (event) {
+					if (event.keyCode == 13 || event.which == 13) {
+						event.preventDefault(); // Prevent the form from submitting
+						searchBtnClicked();
+					}
+				});
+			});
+		</script>
+
+		<div id="nav" class="px-3 bg-primary text-white">
+			<div class="container">
+				<div class="d-flex flex-wrap align-items-center justify-content-center py-2">
+					<ul class="nav col-12 col-lg-auto justify-content-center my-md-0 text-small tab_list">
+						<li><a href="main.html" class="nav-link text-secondary">主页</a></li>
+						<li><a href="#" class="nav-link text-white">城市美景</a></li>
+						<li><a href="food.html" class="nav-link text-white" target="_blank">城市美食</a></li>
+						<li class="nav-item dropdown">
+							<a href="#" class="nav-link dropdown-toggle" id="navbardrop" data-bs-toggle="dropdown"
+								style="color: #f8f2f2;">
+								旅游指南
+							</a>
+							<div class="dropdown-menu">
+								<a class="dropdown-item" href="#">晋国博物馆</a>
+								<a class="dropdown-item" href="#">春秋晋国城</a>
+								<a class="dropdown-item" href="#">桥山黄帝文化风景区</a>
+								<a class="dropdown-item" href="#">朝阳沟景区</a>
+								<a class="dropdown-item" href="#">磨盘岭休闲农业观光区</a>
+							</div>
+						</li>
+						<li><a href="#" class="nav-link text-white">成语之乡</a></li>
+						<li><a href="#" class="nav-link text-white">其他</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+
+
+	</div>
+
+	<body>
+		<div class="famous_food">
+			<ul class="flist">
+				<li class="ffood">
+					<ul>
+						<li>
+							<img src="picture\food\helaomian.jpg">
+							<span>交里桥饸烙面</span>
+						</li>
+						<li>
+							<p>饸饹面是曲沃的传统小吃，在晋南一带，可以说是妇孺皆知，名闻四方。饸饹面因其配方独特，用料考究，香味四溢，而深受广大食客的青睐。其中最有名得要属交里桥饸饹面，至今已有四百多年的历史，在2011年被评定为省级非物质文化遗产。曲沃交里桥饸饹面与饼子，堪称中国式的“快餐”。荤素搭配合理，有汤有面，营养丰富，色香味美，筋滑利口，美名远扬，代代相传。
+							</p>
+						</li>
+					</ul>
+				</li>
+				<li class="ffood">
+					<ul>
+						<li>
+							<img src="picture\food\yangtang.jpg">
+							<span>羊汤</span>
+						</li>
+						<li>
+							<p>曲沃羊汤，又名羊杂羹或羊头菜。兴起于北魏年间，迄今已有1500多年历史。《曲沃县志》载，北魏拓跋氏食羊肉，弃置羊头、内脏及骨架，县人惋惜拣洗熬制成杂羹，味香美，上市出售，备受青睐，遂成了县内的风味名吃。比较有名得的有梅记羊汤，吕保安羊汤。曲沃羊汤的做法是将羊骨架上火熬煮，使其全羊精华尽化汤中，后将羊头肉、羊血及羊杂碎全部煮至软嫩可口，最后再放上羊油炒辣椒面后即可售卖了。吃的时候，连汤带肉盛到碗中放入大量葱段，一碗汤似炼乳，红亮翠绿，香喷喷暖洋洋的羊头菜就上桌了，配上一个油酥火烧，初冬的早晨只此一碗就温暖一天。
+							</p>
+						</li>
+					</ul>
+				</li>
+				<li class="ffood">
+					<ul>
+						<li>
+							<img src="picture\food\niurouwanzimian.jpg">
+							<span>牛肉丸子面</span>
+						</li>
+						<li>
+							<p>牛肉丸子面是山西临汾人创造并发扬光大的。牛肉丸子面生在临汾，就不能不说牛肉丸子面。清真的，油而不腻，刚劲的面加上十足的辣汤，享有盛名的李家丸子配上香烂的牛肉，混有特有的香料，辣中又透着麻麻的感觉，总是令人神往
+							</p>
+						</li>
+					</ul>
+				</li>
+				<li class="ffood">
+					<ul>
+						<li>
+							<img src="picture\food\doushagao.jpg">
+							<span>豆沙糕</span>
+
+						</li>
+						<li>
+							<p>豆沙糕又叫豌豆糕，澄沙糕，是由豌豆、柿饼制成。创制于清末，是曲沃地区的一道传统特色糕点。是老百姓喜爱的时令小吃之一，更是夏季清凉祛暑的必备食品，因山西人尤其是咱们曲沃、侯马、河津等地的人们喜欢吃豆沙，故因此而得名。相传当年太平天国义军攻克河南济源后，招募当地青壮年入伍，率兵北上攻占了晋城、长治等地，继续向晋南挺进。部队驻扎曲沃时，一些济源籍伤残士兵看到曲沃地肥景美，市井繁荣，便不思故乡，留居曲沃，为谋生而经营起豆沙糕生意。
+							</p>
+						</li>
+					</ul>
+				</li>
+			</ul>
+			<ul class="others">
+				<li>
+					<img src="picture\food\dapanji.jpg">
+					<span>大盘鸡</span>
+				</li>
+				<li>
+					<img src="picture\food\tangcai.jpg">
+					<span>烫菜</span>
+				</li>
+				<li>
+					<img src="picture\food\daxia.jpg">
+					<span>王婆大虾</span>
+				</li>
+				<li>
+					<img src="picture\food\guoyourou.jpg">
+					<span>过油肉</span>
+				</li>
+				<li>
+					<img src="picture\food\qiaomian.jpg">
+					<span>莜面</span>
+				</li>
+			</ul>
+		</div>
+		</div>
+		<div class="footer">
+			<p>
+				<a href="javascript::">关于我们</a>
+				<a href="javascript::">联系我们</a>
+				<a href="javascript::">反馈</a>
+				<a href="javascript::" style="border: none">更多</a>
+			</p>
+	</body>
+
+</html>
