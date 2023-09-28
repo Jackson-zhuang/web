@@ -6,7 +6,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<!-- <title>主页</title> -->
-	
+
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
 	<!-- <link rel="import" href="food.html" id="page1"> -->
 
@@ -24,8 +24,8 @@
 <body>
 
 
-		<div style="background-image: url(./picture/banner-zzbbg.png);">
-			<!-- <div class="bg-primary px-3 py-2">
+	<div style="background-image: url(./picture/banner-zzbbg.png);">
+		<!-- <div class="bg-primary px-3 py-2">
 				<div class="d-flex justify-content-start">
 
 					<div class="col-md-2">
@@ -45,73 +45,74 @@
 			</div> -->
 
 
-			<div class="container my-4">
-				<!-- Logo & Search Section -->
-				<div class="d-flex justify-content-around align-items-center">
-					<div class="">
-						<img src="picture/main/icon.png" class="" style="width: 20vw;" alt="主页图标">
-					</div>
-					<div class="">
-						<div class="input-group">
-							<input id="input_search" type="text" class="form-control" name="search"
-								placeholder="请输入关键字">
-							<button class="btn btn-outline-secondary" type="button"
-								onclick="searchBtnClicked()">搜索</button>
-						</div>
+		<div class="container my-4">
+			<!-- Logo & Search Section -->
+			<div class="d-flex justify-content-around align-items-center">
+				<div class="">
+					<img src="picture/main/icon.png" class="" style="width: 20vw;" alt="主页图标">
+				</div>
+				<div class="">
+					<div class="input-group">
+						<input id="input_search" type="text" class="form-control" name="search" placeholder="请输入关键字">
+						<button class="btn btn-outline-secondary" type="button" onclick="searchBtnClicked()">搜索</button>
 					</div>
 				</div>
 			</div>
+		</div>
+		<script>
+			function searchBtnClicked() {
+				var inputValue = document.getElementById('input_search').value;
 
-			<div id="nav" class="px-3 bg-primary text-white">
-				<div class="container">
-					<div class="d-flex flex-wrap align-items-center justify-content-center py-2">
-						<ul class="nav col-12 col-lg-auto justify-content-center my-md-0 text-small tab_list">
-							<li><a href="main.html" class="nav-link text-secondary">主页</a></li>
-							<li><a href="#" class="nav-link text-white">城市美景</a></li>
-							<li><a href="food.html" class="nav-link text-white" target="_blank">城市美食</a></li>
-							<li class="nav-item dropdown">
-								<a href="#" class="nav-link dropdown-toggle" id="navbardrop" data-bs-toggle="dropdown"
-									style="color: #f8f2f2;">
-									旅游指南
-								</a>
-								<div class="dropdown-menu">
-									<a class="dropdown-item" href="#">晋国博物馆</a>
-									<a class="dropdown-item" href="#">春秋晋国城</a>
-									<a class="dropdown-item" href="#">桥山黄帝文化风景区</a>
-									<a class="dropdown-item" href="#">朝阳沟景区</a>
-									<a class="dropdown-item" href="#">磨盘岭休闲农业观光区</a>
-								</div>
-							</li>
-							<li><a href="#" class="nav-link text-white">成语之乡</a></li>
-							<li><a href="#" class="nav-link text-white">其他</a></li>
-						</ul>
-					</div>
+				if (inputValue == "") {
+					alert("未输入关键词");
+					return;
+				}
+
+				var searchURL = "https://www.bing.com/images/search?q=" + inputValue;
+				window.open(searchURL, '_blank');
+			}
+
+			// 确保在完整的DOM内容加载后才执行我们的脚本
+			document.addEventListener("DOMContentLoaded", function () {
+				// Add an event listener to the input field
+				document.getElementById('input_search').addEventListener('keydown', function (event) {
+					if (event.keyCode == 13 || event.which == 13) {
+						event.preventDefault(); // Prevent the form from submitting
+						searchBtnClicked();
+					}
+				});
+			});
+		</script>
+
+		<div id="nav" class="px-3 bg-primary text-white">
+			<div class="container">
+				<div class="d-flex flex-wrap align-items-center justify-content-center py-2">
+					<ul class="nav col-12 col-lg-auto justify-content-center my-md-0 text-small tab_list">
+						<li><a href="main.html" class="nav-link text-secondary">主页</a></li>
+						<li><a href="#" class="nav-link text-white">城市美景</a></li>
+						<li><a href="food.html" class="nav-link text-white" target="_blank">城市美食</a></li>
+						<li class="nav-item dropdown">
+							<a href="#" class="nav-link dropdown-toggle" id="navbardrop" data-bs-toggle="dropdown"
+								style="color: #f8f2f2;">
+								旅游指南
+							</a>
+							<div class="dropdown-menu">
+								<a class="dropdown-item" href="#">晋国博物馆</a>
+								<a class="dropdown-item" href="#">春秋晋国城</a>
+								<a class="dropdown-item" href="#">桥山黄帝文化风景区</a>
+								<a class="dropdown-item" href="#">朝阳沟景区</a>
+								<a class="dropdown-item" href="#">磨盘岭休闲农业观光区</a>
+							</div>
+						</li>
+						<li><a href="#" class="nav-link text-white">成语之乡</a></li>
+						<li><a href="#" class="nav-link text-white">其他</a></li>
+					</ul>
 				</div>
 			</div>
-
-
 		</div>
 
 
-		<script>
-			// let nav = document.querySelector('#nav')
-
-			// // alert(nav)
-			// window.addEventListener('scroll', function (e) {
-			// 	if (window.pageYOffset > nav.offsetTop) {
-			// 		nav.style.position = 'fixed'
-			// 		nav.style.top = '0px'
-			// 	} else {
-			// 		nav.style.position = 'static'
-			// 	}
-			// })
-// ————————————————
-// 版权声明：本文为CSDN博主「LeungZhenPang」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。
-// 原文链接：https://blog.csdn.net/weixin_43967603/article/details/105999819
-		</script>
-
-
-
+	</div>
 
 	<body>
 		<div class="famous_food">
