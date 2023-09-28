@@ -193,7 +193,7 @@
         // 确保在完整的DOM内容加载后才执行我们的脚本
         document.addEventListener("DOMContentLoaded", function () {
             // Add an event listener to the input field
-            document.getElementById('input1').addEventListener('keydown', function (event) {
+            document.getElementById('input_search').addEventListener('keydown', function (event) {
                 if (event.keyCode == 13 || event.which == 13) {
                     event.preventDefault(); // Prevent the form from submitting
                     searchBtnClicked();
