@@ -1,11 +1,6 @@
-.top-section {
-    background-color: rgb(193, 197, 197);
-    padding: 1rem 0; /* Top and bottom padding */
-}
 
 .container {
-    max-width: 1200px; /* Adjust if you have a specific width in mind */
-    margin: 0 auto; /* Centers the container */
+    /* padding: 10px; */
 }
 
 .link {
@@ -95,3 +90,10 @@
     border: none;       /* 最后一个链接不应有竖线 */
 }
 
+body, html {
+    border: none;
+    margin: 0;
+    padding: 0;
+    /* background-color: #12111150; */
+    /* overflow: hidden; */
+}
